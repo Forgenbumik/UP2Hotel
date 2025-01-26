@@ -1,0 +1,40 @@
+﻿<Page x:Class="UP2.Pages.BookingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UP2.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      
+      Title="Работа с бронированием номеров">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="76*" MaxHeight="170"/>
+            <RowDefinition Height="40" MinHeight="30"/>
+            <RowDefinition Height="86*" MinHeight="100"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Укажите период с" Margin="10,0,0,0" Height="20" Width="120" HorizontalAlignment="Left"/>
+        <DatePicker x:Name="BeginFilterDateText" Margin="115,0,0,0" SelectedDateChanged="DatePicker_SelectedDateChanged"/>
+        <TextBlock Text="по" Margin="245,0,0,0" Height="20" Width="20" HorizontalAlignment="Left"/>
+        <DatePicker x:Name="EndFilterDateText" Margin="265,0,0,0" SelectedDateChanged="DatePicker_SelectedDateChanged"/>
+        <Button Content="Показать всё" Margin="400,0,0,0" Click="ShowAll_Click" Height="30" Width="100"/>
+
+        <Button Content="Создать" Click="Create_Click" Grid.Row="2" Height="30" Width="100"/>
+        <Button Content="Удалить" Click="Delete_Click" Grid.Row="2" Margin="120,0,0,0"/>
+        <DataGrid x:Name="DGridBookings" Grid.Row="3" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер бронирования" Binding="{Binding ID}"/>
+                <DataGridTextColumn Header="Клиент" Binding="{Binding Client.Surname}"/>
+                <DataGridTextColumn Header="Клиент" Binding="{Binding Client.FirstName}"/>
+                <DataGridTextColumn Header="Клиент" Binding="{Binding Client.LastName}"/>
+                <DataGridTextColumn Header="ID номера" Binding="{Binding Room.ID}"/>
+                <DataGridTextColumn Header="Дата заезда" Binding="{Binding CheckInDate}"/>
+                <DataGridTextColumn Header="Дата выезда" Binding="{Binding CheckOutDate}"/>
+                <DataGridTextColumn Header="Категория размещения" Binding="{Binding Room.RoomType.TypeName}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
