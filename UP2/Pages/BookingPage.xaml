@@ -27,9 +27,9 @@
         <DataGrid x:Name="DGridBookings" Grid.Row="3" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Номер бронирования" Binding="{Binding ID}"/>
-                <DataGridTextColumn Header="Клиент" Binding="{Binding Client.Surname}"/>
-                <DataGridTextColumn Header="Клиент" Binding="{Binding Client.FirstName}"/>
-                <DataGridTextColumn Header="Клиент" Binding="{Binding Client.LastName}"/>
+                <DataGridTextColumn Header="Фамилия клиента" Binding="{Binding Client.Surname}"/>
+                <DataGridTextColumn Header="Имя клиента" Binding="{Binding Client.FirstName}"/>
+                <DataGridTextColumn Header="Отчество клиента" Binding="{Binding Client.LastName}"/>
                 <DataGridTextColumn Header="ID номера" Binding="{Binding Room.ID}"/>
                 <DataGridTextColumn Header="Дата заезда" Binding="{Binding CheckInDate}"/>
                 <DataGridTextColumn Header="Дата выезда" Binding="{Binding CheckOutDate}"/>
