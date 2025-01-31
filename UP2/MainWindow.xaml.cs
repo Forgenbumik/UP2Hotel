@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UP2.Pages;
 
 namespace UP2
 {
@@ -20,9 +21,21 @@ namespace UP2
     /// </summary>
     public partial class MainWindow : Window
     {
+        BookingPage bookingPage = new BookingPage();
+        ClientsPage clientsPage = new ClientsPage();
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ToBookings_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(bookingPage);
+        }
+
+        private void ToClients_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(clientsPage);
         }
     }
 }

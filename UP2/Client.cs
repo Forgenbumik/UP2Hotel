@@ -11,7 +11,8 @@ namespace UP2
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class Client
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -27,6 +28,9 @@ namespace UP2
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
         public string DocumentInfo { get; set; }
+
+        [NotMapped]
+        public double? PaymentSum { get; set; }
         public Nullable<System.DateTime> BirthDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
