@@ -186,6 +186,8 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="TestScenarios\TestScenarios.docx" />
+    <None Include="TestScenarios\TestScenarios.pdf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -209,8 +211,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TestScenarios\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
