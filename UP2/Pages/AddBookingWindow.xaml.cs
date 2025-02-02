@@ -47,7 +47,7 @@ namespace UP2.Pages
             var List = HE.Clients.ToList();
             List.Reverse();
             ClientsList.ItemsSource = List;
-            RoomsList.ItemsSource = HE.Rooms.ToList();
+            RoomsList.ItemsSource = HE.Rooms.Where(r => r.StatusID == 4).ToList();
             
         }
 
@@ -61,7 +61,9 @@ namespace UP2.Pages
                 MessageBox.Show("Неверный формат даты или не заполнены все поля");
                 return;
             }
+            Room selectedRoom = RoomsList.SelectedItem as Room;
             HE.Bookings.Add(_currentbooking);
+            selectedRoom.StatusID = 1;
             HE.SaveChanges();
             MessageBox.Show("Информация сохранена!");
             OnBookingAdded.Invoke(_currentbooking);
